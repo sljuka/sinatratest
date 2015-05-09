@@ -2,13 +2,16 @@
 lock '3.4.0'
 
 set :application, 'sinatratest'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@github.com:sljuka/sinatratest.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
+set :deploy_to, '/home/deploy/apps/sinatratest'
+
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.2.2'
 
 # Default value for :scm is :git
 # set :scm, :git
