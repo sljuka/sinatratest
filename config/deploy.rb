@@ -14,7 +14,6 @@ set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.2.2'
 
 set :passenger_restart_with_sudo, true # default
-default_run_options[:pty] = true
 
 # Default value for :scm is :git
 # set :scm, :git
