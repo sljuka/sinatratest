@@ -39,10 +39,12 @@ set :rbenv_ruby, '2.2.2'
 
 namespace :deploy do
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      run "touch #{current_release}/tmp/restart.txt"
-    end
+  task :start, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
+  end
+
+  task :restart, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
   end
 
 end
