@@ -41,7 +41,9 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    execute :touch, "#{current_path}/tmp/restart.txt"
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, "#{current_path}/tmp/restart.txt"
+    end
   end
 
   after :publishing, :restart
