@@ -9,6 +9,7 @@ server "151.80.233.77", :user => "deploy", :roles => %{app}
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
 set :branch, "master"
+set :passenger_restart_with_sudo, true # default
 
 # role-based syntax
 # ==================
