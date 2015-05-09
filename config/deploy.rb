@@ -39,11 +39,11 @@ set :rbenv_ruby, '2.2.2'
 
 namespace :deploy do
 
-  task :start, :roles => :app do
+  task :start do
     run "touch #{current_release}/tmp/restart.txt"
   end
 
-  task :restart, :roles => :app do
+  task :restart do
     run "touch #{current_release}/tmp/restart.txt"
   end
 
