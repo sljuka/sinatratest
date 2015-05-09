@@ -39,12 +39,11 @@ set :rbenv_ruby, '2.2.2'
 
 namespace :deploy do
 
-  task :start do
-    execute :touch, "#{current_path}/tmp/restart.txt"
+  desc 'Restart application'
+  task :restart do
+    invoke :touch, "#{current_path}/tmp/restart.txt"
   end
 
-  task :restart do
-    execute :touch, "#{current_path}/tmp/restart.txt"
-  end
+  after :publishing, :restart
 
 end
