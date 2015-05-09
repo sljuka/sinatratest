@@ -41,7 +41,7 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    invoke :touch, "#{current_path}/tmp/restart.txt"
+    execute :touch, "#{current_path}/tmp/restart.txt"
   end
 
   after :publishing, :restart
