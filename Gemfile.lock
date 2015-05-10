@@ -45,5 +45,6 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rbenv
   capistrano3-unicorn
+  rack
   sinatra
   unicorn
