@@ -43,7 +43,9 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    run "kill -s USR2 `cat /home/deploy/apps/sinatratest/shared/pids/unicorn.pid`"
+    on roles("app") do
+      execute "kill -s USR2 `cat /home/deploy/apps/sinatratest/shared/pids/unicorn.pid`"
+    end
   end
 
 end
