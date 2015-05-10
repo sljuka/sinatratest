@@ -14,7 +14,7 @@ stdout_path "/home/deploy/apps/sinatratest/current/logStdOut/unicorn.log"
 
 # Unicorn socket
 # listen "/tmp/unicorn.[app name].sock"
-listen "/tmp/unicorn.myapp.sock"
+listen "/tmp/sinatratest.sock"
 
 # Number of processes
 # worker_processes 4
