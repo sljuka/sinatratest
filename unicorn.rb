@@ -1,6 +1,6 @@
 # Set the working application directory
 # working_directory "/path/to/your/app"
-working_directory "/home/deploy/apps/sinatratest/current/my_app"
+working_directory "/home/deploy/apps/sinatratest/current"
 
 # Unicorn PID file location
 # pid "/path/to/pids/unicorn.pid"
