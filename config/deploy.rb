@@ -91,13 +91,12 @@ namespace :deploy do
   end
  
   desc "Stop unicorn server immediately"
-    task :force_stop => :environment do
-      on roles(:app) do
-        force_stop_unicorn
-      end
+  task :force_stop => :environment do
+    on roles(:app) do
+      force_stop_unicorn
     end
   end
-  
-  after 'deploy:publishing', 'deploy:restart'
 
 end
+
+after 'deploy:publishing', 'deploy:restart'
