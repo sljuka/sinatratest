@@ -1,6 +1,3 @@
-require "rubygems"
-require "sinatra"
-
-require File.expand_path '../my_app.rb', __FILE__
-
-run MyApp
+require File.expand_path('../my_app.rb', __FILE__)
+use Rack::ShowExceptions
+run MyApp.new    
