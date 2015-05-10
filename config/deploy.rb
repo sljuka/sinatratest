@@ -39,15 +39,9 @@ set :passenger_restart_with_sudo, true # default
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-
-  desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, "#{current_path}/tmp/restart.txt"
-    end
+    invoke 'unicorn:reload'
   end
-
-  after :publishing, :restart
-
 end
