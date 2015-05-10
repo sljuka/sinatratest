@@ -9,12 +9,12 @@ pid "/home/deploy/apps/sinatratest/current/unicorn.pid"
 # Path to logs
 # stderr_path "/path/to/logs/unicorn.log"
 # stdout_path "/path/to/logs/unicorn.log"
-stderr_path "/home/deploy/apps/sinatratest/current/logStdErr/unicorn.log"
-stdout_path "/home/deploy/apps/sinatratest/current/logStdOut/unicorn.log"
+stderr_path "/home/deploy/apps/sinatratest/current/log/err.log"
+stdout_path "/home/deploy/apps/sinatratest/current/log/out.log"
 
 # Unicorn socket
 # listen "/tmp/unicorn.[app name].sock"
-listen "/tmp/sinatratest.sock"
+listen "/tmp/unicorn.sinatratest.sock"
 
 # Number of processes
 # worker_processes 4
