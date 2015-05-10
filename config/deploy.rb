@@ -43,7 +43,7 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    #invoke 'unicorn:restart'
+    run "#{try_sudo} kill -s USR2 `cat /home/deploy/apps/sinatratest/shared/pids/unicorn.pid`"
   end
 
 end
