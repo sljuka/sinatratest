@@ -44,8 +44,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles("app") do
-      execute "kill -s QUIT `cat /home/deploy/apps/sinatratest/shared/pids/unicorn.pid` && cd /home/deploy/apps/sinatratest/current && unicorn -c unicorn.rb -D
-"
+      invoke 'unicorn:restart'
     end
   end
 
