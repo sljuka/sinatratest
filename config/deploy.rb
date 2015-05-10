@@ -40,6 +40,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('logs', 'pids', 'tmp', 'vendor/bu
 # set :keep_releases, 5
 
 namespace :deploy do
+
   task :environment do
     set :unicorn_pid, "#{shared_path}/pids/unicorn.pid"
     set :unicorn_config, "#{current_path}/unicorn.rb"
@@ -96,6 +97,7 @@ namespace :deploy do
       end
     end
   end
-end
+  
+  after 'deploy:publishing', 'deploy:restart'
 
-after 'deploy:publishing', 'deploy:restart'
+end
