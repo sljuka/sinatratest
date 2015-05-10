@@ -4,7 +4,7 @@ require 'sinatra/base'
 class MyApp < Sinatra::Base
 
   get '/' do
-    'Hi world!'
+    'Hello world!'
   end
 
 end
