@@ -1,5 +1,6 @@
-require 'rubygems'
+require "rubygems"
+require "sinatra"
 
-require File.dirname(__FILE__) + '/my_app'
+require File.expand_path '../my_app.rb', __FILE__
 
-run MyApp.new
+run MyApp
