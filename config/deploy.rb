@@ -42,7 +42,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('logs', 'pids', 'tmp', 'vendor/bu
 namespace :deploy do
  
   desc "Restart unicorn server gracefully"
-  task :restart => :environment do
+  task :restart do
     on roles(:app) do
       execute :mkdir, '-p', current_path.join('tmp')
       execute :touch, current_path.join('tmp/restart.txt')
