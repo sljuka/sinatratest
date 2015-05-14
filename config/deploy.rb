@@ -44,8 +44,8 @@ namespace :deploy do
   desc "Restart unicorn server gracefully"
   task :restart => :environment do
     on roles(:app) do
-      execute :mkdir, '-p', release_path.join('tmp')
-      execute :touch, release_path.join('tmp/restart.txt')
+      execute :mkdir, '-p', current_path.join('tmp')
+      execute :touch, current_path.join('tmp/restart.txt')
     end
   end
 
